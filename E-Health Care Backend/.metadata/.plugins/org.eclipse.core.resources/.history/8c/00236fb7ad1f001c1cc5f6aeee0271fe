@@ -1,0 +1,22 @@
+package com.service;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class CartService {
+
+	
+	
+	public void cartDetails( Map<?,?> cart) {
+		Set<?> ss =  cart.entrySet();
+		Iterator<?> li = ss.iterator();
+		while(li.hasNext()) {
+			Map.Entry<?, ?> me = (Map.Entry<?, ?>)li.next();
+			
+		}
+	}
+}

@@ -1,0 +1,11 @@
+package com.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class OrderDetails {
+@Id
+private int orderId;
+
+}

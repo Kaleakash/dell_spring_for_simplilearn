@@ -1,0 +1,35 @@
+package com.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Account {
+@Id
+@Column(name="accnubmer")
+private int accnubmer;
+@Column(name="amount")
+private float amount;
+@Column(name="email")
+private String email;
+public int getAccnubmer() {
+	return accnubmer;
+}
+public void setAccnubmer(int accnubmer) {
+	this.accnubmer = accnubmer;
+}
+public float getAmount() {
+	return amount;
+}
+public void setAmount(float amount) {
+	this.amount = amount;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+
+}

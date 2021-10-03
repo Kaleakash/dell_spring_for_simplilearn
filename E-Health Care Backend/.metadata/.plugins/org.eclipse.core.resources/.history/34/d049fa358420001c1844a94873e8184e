@@ -1,0 +1,17 @@
+package com.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Account {
+@Id
+@Column(name="accnubmer")
+private int accnubmer;
+@Column(name="amount")
+private float amount;
+@Column(name="emaild")
+private String emailid;
+
+}

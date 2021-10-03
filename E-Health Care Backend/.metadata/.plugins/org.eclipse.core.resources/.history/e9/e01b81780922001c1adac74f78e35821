@@ -1,0 +1,16 @@
+package com.entity;
+
+import java.time.LocalDateTime;
+
+public class Medicineorderjoin {
+private int modid;
+private int mid;
+private String medicinename;
+private float price;
+private int quantity;
+private int orderId;
+private LocalDateTime orderDate;
+private String emailId;
+private float totalamount;
+
+}

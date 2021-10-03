@@ -1,0 +1,12 @@
+package com.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface MedicineorderjoinDao extends JpaRepository<OrderDetails, Integer>{
+
+	@Query("select od.emailId,od.totalamount,mod.modid,mod.mid,mod.medicinename,mod.price,mod.quantity,mod.orderId,mod.orderDate MedicineOrderDetails mod, OrderDetails od where od.orderId=mod.orderId")
+	public List<Medicineorderjoin> getAllOrderDetails();
+}

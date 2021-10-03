@@ -1,0 +1,16 @@
+package com.dao;
+
+import java.util.List;
+
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.entity.Medicineorderjoin;
+import com.entity.Orderdetails;
+
+public interface MedicineorderjoinDao extends CrudRepository<Orderdetails, Integer>{
+
+	@Query(value = "select new com.entity.Medicineorderjoin(od.emailId,od.totalamount,meod.modid,meod.mid,meod.medicinename,meod.price,meod.quantity,meod.orderId,meod.orderDate) from MedicineOrderDetails meod, OrderDetails od where od.orderId=meod")
+	public List<Medicineorderjoin> getAllOrderDetails();
+}

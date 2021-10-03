@@ -1,0 +1,46 @@
+package com.entity;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+public class Orderdetails {
+@Id
+@Column(name="orderid")
+private int orderId;
+@Column(name="emailId")
+private String emailId;
+@Column(name="totalamount")
+private float totalamount;
+@Column(name="orderdate")
+private LocalDateTime orderDate;
+public int getOrderId() {
+	return orderId;
+}
+public void setOrderId(int orderId) {
+	this.orderId = orderId;
+}
+public String getEmailId() {
+	return emailId;
+}
+public void setEmailId(String emailId) {
+	this.emailId = emailId;
+}
+public float getTotalamount() {
+	return totalamount;
+}
+public void setTotalamount(float totalamount) {
+	this.totalamount = totalamount;
+}
+public LocalDateTime getOrderDate() {
+	return orderDate;
+}
+public void setOrderDate(LocalDateTime orderDate) {
+	this.orderDate = orderDate;
+}
+
+}

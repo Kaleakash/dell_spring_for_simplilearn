@@ -1,0 +1,71 @@
+package com.entity;
+
+import java.time.LocalDateTime;
+
+
+public class Medicineorderjoin {
+private int modid;
+private int mid;
+private String medicinename;
+private float price;
+private int quantity;
+private int orderId;
+private LocalDateTime orderDate;
+private String emailId;
+private float totalamount;
+public int getModid() {
+	return modid;
+}
+public void setModid(int modid) {
+	this.modid = modid;
+}
+public int getMid() {
+	return mid;
+}
+public void setMid(int mid) {
+	this.mid = mid;
+}
+public String getMedicinename() {
+	return medicinename;
+}
+public void setMedicinename(String medicinename) {
+	this.medicinename = medicinename;
+}
+public float getPrice() {
+	return price;
+}
+public void setPrice(float price) {
+	this.price = price;
+}
+public int getQuantity() {
+	return quantity;
+}
+public void setQuantity(int quantity) {
+	this.quantity = quantity;
+}
+public int getOrderId() {
+	return orderId;
+}
+public void setOrderId(int orderId) {
+	this.orderId = orderId;
+}
+public LocalDateTime getOrderDate() {
+	return orderDate;
+}
+public void setOrderDate(LocalDateTime orderDate) {
+	this.orderDate = orderDate;
+}
+public String getEmailId() {
+	return emailId;
+}
+public void setEmailId(String emailId) {
+	this.emailId = emailId;
+}
+public float getTotalamount() {
+	return totalamount;
+}
+public void setTotalamount(float totalamount) {
+	this.totalamount = totalamount;
+}
+
+}

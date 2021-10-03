@@ -1,0 +1,18 @@
+package com.dao;
+
+import java.util.List;
+
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+
+import com.entity.Orderdetails;
+
+@Repository
+public interface OrderDetailsDao extends JpaRepository<Orderdetails, Integer>{
+
+	@Query("select o from Orderdetails o where o.email = :email")
+	public List<Orderdetails> getOrderIdUsingEmail(@Param("email") String email);
+}

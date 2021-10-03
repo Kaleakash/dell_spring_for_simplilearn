@@ -1,0 +1,15 @@
+package com.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.entity.Medicine;
+
+@Service
+public class MedicineOrderDetailsService {
+
+	public void placeOrderDetails(List<Medicine> listOfMedicine,) {
+		
+	}
+}

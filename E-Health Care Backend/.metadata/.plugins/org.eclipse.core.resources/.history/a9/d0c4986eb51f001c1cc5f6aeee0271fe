@@ -1,0 +1,26 @@
+package com.service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dao.OrderDetailsDao;
+import com.entity.Medicine;
+import com.entity.OrderDetails;
+
+@Service
+public class MedicineOrderDetailsService {
+
+	
+	@Autowired
+	OrderDetailsDao orderDetailsDao;
+	
+	public void placeOrderDetails(List<Medicine> listOfMedicine,String email, float total) {
+			OrderDetails od = new OrderDetails();
+			od.setEmailId(email);
+			od.setOrderDate(LocalDateTime.now());
+			orderDetailsDao.save(null)
+	}
+}

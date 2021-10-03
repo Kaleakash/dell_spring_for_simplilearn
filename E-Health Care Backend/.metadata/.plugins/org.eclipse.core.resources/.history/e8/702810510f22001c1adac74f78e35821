@@ -1,0 +1,22 @@
+package com.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dao.MedicineorderjoinDao;
+import com.entity.Medicineorderjoin;
+
+@Service
+public class MedicineOrderJoinService {
+
+	@Autowired
+	MedicineorderjoinDao medicineOrderoinDao;
+	
+	public void getMedicineOrderDetails() {
+		for(Object obj : medicineOrderoinDao.getAllOrderDetails()) {
+			Medicineorderjoin mm = (Medicineorderjoin)obj;
+			System.out.println(mm.getEmailId());
+		}
+		//System.out.println(medicineOrderoinDao.getAllOrderDetails());
+	}
+}

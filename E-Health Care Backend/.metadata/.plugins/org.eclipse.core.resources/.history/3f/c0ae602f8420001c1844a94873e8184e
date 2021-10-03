@@ -1,0 +1,11 @@
+package com.entity;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Account {
+private int accnonumber;
+private float amount;
+private String emailid;
+
+}

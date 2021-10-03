@@ -1,0 +1,55 @@
+package com.service;
+
+import java.time.LocalDateTime;
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dao.MedicianDao;
+import com.dao.MedicineOrderDetailsDao;
+import com.dao.OrderDetailsDao;
+import com.entity.Medicine;
+import com.entity.Medicineorderdetails;
+import com.entity.Orderdetails;
+
+@Service
+public class MedicineOrderDetailsService {
+
+	
+	@Autowired
+	OrderDetailsDao orderDetailsDao;
+	
+	@Autowired
+	MedicineOrderDetailsDao medicineOrderDetailsDao;
+	
+	@Autowired
+	MedicianDao medicineDao;
+	
+	public String placeOrderDetails(List<Medicine> listOfMedicine,String email, float total) {
+			try {
+			Orderdetails od = new Orderdetails();
+			od.setEmailId(email);
+			od.setOrderDate(LocalDateTime.now());
+			od.setTotalamount(total);
+		 Orderdetails odref	= orderDetailsDao.save(od);
+			Medicineorderdetails mod = new Medicineorderdetails();
+			Iterator<Medicine> li = listOfMedicine.iterator();
+			while(li.hasNext()) {
+				Medicine mm = li.next();
+				mod.setMid(mm.getMid());
+				mod.setMedicinename(mm.getMedicinename());
+				mod.setPrice(mm.getPrice());
+				mod.setQuantity(mm.getQuantity());
+				mod.setOrderId(odref.getOrderId());
+				medicineOrderDetailsDao.save(mod);
+				medicineDao.updateOrderQuantity(mm.getMid(), mm.getQuantity());
+			}
+			return "Order placed successfully";
+			}catch(Exception e) {
+				System.out.println(e);
+				return "Order didn't place";
+			}
+	}
+}
